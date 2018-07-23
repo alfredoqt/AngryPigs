@@ -1,0 +1,56 @@
+{
+    "levels": [
+        {
+            "level": {
+                "id": 0,
+                "name": "Tower",
+                "projectiles": 15,
+                "cannon": {
+                    "sx": 75,
+                    "sy": 92
+                },
+                "entities": {
+                    "birds": [{
+                            "sx": 480,
+                            "sy": 601
+                        },
+                        {
+                            "sx": 483,
+                            "sy": 172
+                        }
+                    ],
+                    "collidables": [{
+                            "id": 0,
+                            "sx": 471,
+                            "sy": 225,
+                            "height": 70,
+                            "width": 70,
+                            "texture": "images/metalBox.png",
+                            "bounce": 0,
+                            "mass": 90,
+                            "friction": 1,
+                            "shape": "square"
+                        },
+                        {
+                            "id": 1,
+                            "sx": 289,
+                            "sy": 448,
+                            "height": 200,
+                            "width": 30,
+                            "texture": "images/stoneBox.png",
+                            "bounce": 0,
+                            "mass": 50,
+                            "friction": 1,
+                            "shape": "square"
+                        }
+                    ]
+                }
+            }
+        }
+    ],
+
+    "objects" : [
+
+    ]
+
+}
