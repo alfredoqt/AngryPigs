@@ -1,8 +1,8 @@
 /**
  * Collidable class
  *
- * @copyright: (C) 2018 Alfredo Quintero, All Rights Reserved.
- * @author: Alfredo Quintero
+ * @copyright: (C) 2018 Alfredo Quintero Tlacuilo, All Rights Reserved.
+ * @author: Alfredo Quintero Tlacuilo
  * @version: 1.0.0
  * @summary: Creation and serialization of collidables
  *
@@ -14,7 +14,7 @@ const COLLIDABLE_DEFAULTS = {
     BOUNCE: 0,
     MASS: 7,
     FRICTION: 1,
-    TEXTURE: "images/crate-one.jpg"
+    TEXTURE: "images/crate-one.jpg",
 };
 
 class Collidable {
