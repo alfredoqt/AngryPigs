@@ -1,0 +1,61 @@
+<!-- Copyright 2018 - All Right Reserved By Alfredo and Harish -->
+<!-- Main Index File For Angry Pigs Project -->
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Angry Pigs Game</title>
+        <link rel="stylesheet" href="css/styles.css">
+        <link href="https://fonts.googleapis.com/css?family=Gloria+Hallelujah" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Black+Han+Sans" rel="stylesheet">
+    </head>
+    <body>
+
+        <section id="main-menu-screen">
+            <h2 class="title">Angry Pigs Game</h2>
+            <div class="selection-area">
+                <div id="play-button" class="menu-button">PLAY</div>
+                <div id="editor-button" class="menu-button">LEVEL EDITOR</div>
+            </div>
+        </section>
+
+        <section id="game-screen">
+            <div class="flex-container flex-row">
+                <div id="level-name"> Something </div>
+                <div class="nav-bar flex-container flex-row">
+                    <div class="nav-bar-container">
+                        <div class="nav-bar-header">Pigs Left</div>
+                        <div class="nav-bar-stats" id="pigs-left"></div>
+                    </div>
+                    <div id="menu-button" class="nav-bar-button">Exit</div>
+                </div>
+                <div class="game-area-container">
+                    <div id="game-area" class="game-area">
+                        <!-- Used for debugging
+                        <canvas id="c" width="1280" height="720" style="border: 1px solid black"></canvas>
+                        -->
+                    </div>
+                    <div class="game-area-ground"></div>
+                </div>
+            </div>
+        </section>
+        <section id="game-over-screen" class="game-over-screen">
+            <div id="game-over-message" class="game-over-message">Something</div>
+            <div class="selection-area">
+                <div id="replay-button" class="replay-button menu-button">REPLAY</div>
+                <div id="next-level-button" class="next-level-button menu-button">NEXT</div>
+            </div>
+        </section>
+
+        <!-- jQuery -->
+        <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous" defer></script>
+        <!-- Box2d -->
+        <script src="scripts/Box2dWeb-2.1.a.3.min.js"></script>
+
+        <script type="module" src="scripts/app.js" defer></script>
+
+    </body>
+</html>

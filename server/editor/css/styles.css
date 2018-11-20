@@ -1,0 +1,135 @@
+/*
+ * style.css
+ *
+ * Stylesheet for the game
+ *
+ * Copyright 2018 - Alfredo & Harish
+ */
+
+/* Just to add the same box sizing to every dom element */
+* {
+    box-sizing: inherit;
+}
+
+/* Add some defaults */
+body {
+    box-sizing: border-box;
+    margin: 0;
+    font-family: "Gloria Hallelujah", sans-serif;
+    background: url(../images/bg.jpg) no-repeat center center fixed;
+    background-size: cover;
+}
+
+/* Remove ul defaults */
+ul {
+    list-style-type: none;
+    -webkit-margin-before: 0px;
+    -webkit-margin-after: 0px;
+    -webkit-margin-start: 0px;
+    -webkit-margin-end: 0px;
+    -webkit-padding-start: 0px;
+}
+
+/* Remove those strange borders from headers */
+h1, h2, h3, h4, h5, h6 {
+    -webkit-margin-before: 0px;
+    -webkit-margin-after: 0px;
+    -webkit-margin-start: 0px;
+    -webkit-margin-end: 0px;
+}
+
+/* Represents a centered flex container */
+.flex-container {
+    display: flex;
+    justify-content: center;
+}
+
+/* Represents a flex container as a row */
+.flex-row {
+    flex-flow: wrap row;
+}
+
+/* Flex item, every child has equal spacing by default */
+.flex-item {
+    flex-grow: 1;
+}
+
+/* Flex item in center should take three times the space of its siblings */
+.flex-item-center {
+    flex-grow: 3;
+}
+
+/* Constraint on the dimensions of the level area */
+.level-area {
+    width: 1280px;
+    height: 720px;
+    position: relative;
+    border: 1px solid black;
+}
+
+/* Pre defined styles for an element inside level editor */
+.level-area-item {
+    position: absolute;
+}
+
+/* Default display for form inputs */
+.form-control {
+    display: block;
+}
+
+/* Predefined styles for a cannon */
+.cannon {
+    width: 160px;
+    height: 124px;
+    background: url('../images/cannon.png') no-repeat;
+    background-size: 100%;
+}
+
+/* Predefined styles for birds */
+.bird {
+    width: 100px;
+    height: 100px;
+    background-image: url("../images/bird-sprite.png");
+    animation: play .7s steps(4) infinite;
+}
+
+/* Predefined styles for collidables */
+.collidable {
+    width: 120px;
+    height: 120px;
+    background-image: url("../images/crate-one.jpg");
+    background-size: 100% 100%;
+}
+
+/* Bird's animation based on sprite sheet size */
+@keyframes play {
+   from { background-position:    0px; }
+     to { background-position: -400px; }
+}
+
+/* Used to highlight an object being edited */
+.editable-active {
+    outline-style: solid;
+    outline-color: blue;
+    outline-width: medium;
+}
+
+.play-container {
+    display: flex;
+    justify-content: center;
+    padding-bottom: 24px;
+    padding-top: 24px;
+}
+
+.play-title {
+    font-size: 20px;
+    font-weight: bold;
+    transition: all 0.2s;
+    cursor: pointer;
+    text-transform: uppercase;
+}
+
+.play-title:hover {
+    opacity: 0.8;
+    font-size: 24px;
+}

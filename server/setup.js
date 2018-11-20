@@ -19,7 +19,9 @@ function setup() {
   app.use(bodyParser.json());
   app.use(bodyParser.urlencoded({ extended: true }));
   // Serve static files
-  app.use(express.static('build'));
+  app.use(express.static('game'));
+  app.use('/editor',express.static('editor'));
+
 
   route(app);
 
@@ -29,7 +31,7 @@ function setup() {
         return res.status(err.status).send({ status: err.status, message: err.message });
     }
     next(err);
-});
+  });
 
   app.listen(5010, () => console.log(`Listening on port ${5010}`));
 }
