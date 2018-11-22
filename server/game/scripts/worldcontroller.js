@@ -121,7 +121,7 @@ export class WorldController
     {
         this.levelLoaded = false;
 
-        const response = await fetch(`http://localhost:5010/levels/${levelToLoad.id}`);
+        const response = await fetch(`https://alfredoqt.com/angry-pigs/levels/${levelToLoad.id}`);
 
         const data = await response.json();
 

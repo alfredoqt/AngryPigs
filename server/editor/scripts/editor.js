@@ -74,7 +74,7 @@ class Editor {
 
         if (!data.id) {
             // Post level
-            await fetch('http://localhost:5010/levels', {
+            await fetch('https://alfredoqt.com/angry-pigs/levels', {
                 method: "POST", // *GET, POST, PUT, DELETE, etc.
                 mode: "cors", // no-cors, cors, *same-origin
                 cache: "no-cache", // *default, no-cache, reload, force-cache, only-if-cached
@@ -89,7 +89,7 @@ class Editor {
             });
         } else {
             // Put level
-            await fetch(`http://localhost:5010/levels/${data.id}`, {
+            await fetch(`https://alfredoqt.com/angry-pigs/levels/${data.id}`, {
                 method: "PUT", // *GET, POST, PUT, DELETE, etc.
                 mode: "cors", // no-cors, cors, *same-origin
                 cache: "no-cache", // *default, no-cache, reload, force-cache, only-if-cached
@@ -114,7 +114,7 @@ class Editor {
         let request = $( event.target ).serializeArray();
         //console.log(request[0].value);
 
-        const response = await fetch(`http://localhost:5010/levels/${request[0].value}`);
+        const response = await fetch(`https://alfredoqt.com/angry-pigs/levels/${request[0].value}`);
         
         let levelData = await response.json();
         // Rebuild the level area
@@ -131,7 +131,7 @@ class Editor {
         // $.post( "../server/server.php", params )
         //     .then( ( data ) => this._setLevelsToLoad( JSON.parse( data ))
         // );
-        const response = await fetch('http://localhost:5010/levels');
+        const response = await fetch('https://alfredoqt.com/angry-pigs/levels');
         const data = await response.json();
         return data;
     }

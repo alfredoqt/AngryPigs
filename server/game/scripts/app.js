@@ -35,7 +35,7 @@ export class App
 
     async getLevelList()
     {
-        const response = await fetch('http://localhost:5010/levels');
+        const response = await fetch('https://alfredoqt.com/angry-pigs/levels');
         const data = await response.json();
         return data;
     }

@@ -12,7 +12,7 @@ const { ApplicationError } = require('./lib/error_handling');
 const levelRouter = require('./routes/levels');
 
 function route(app) {
-  app.use('/levels', levelRouter);
+  app.use('/angry-pigs/levels', levelRouter);
 }
 
 function setup() {
