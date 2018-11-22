@@ -22,8 +22,8 @@ function setup() {
   app.use(bodyParser.urlencoded({ extended: true }));
   app.use(morgan('dev'))
   // Serve static files
-  app.use(express.static('game'));
-  app.use('/editor',express.static('editor'));
+  app.use('/angry-pigs',express.static('game'));
+  app.use('/angry-pigs/editor',express.static('editor'));
 
 
   route(app);
