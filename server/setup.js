@@ -5,6 +5,7 @@
 
 // Dependencies
 const express = require('express');
+const morgan = require('morgan');
 const bodyParser = require('body-parser');
 const { ApplicationError } = require('./lib/error_handling');
 
@@ -18,6 +19,8 @@ function setup() {
   const app = express();
   app.use(bodyParser.json());
   app.use(bodyParser.urlencoded({ extended: true }));
+  app.use(bodyParser.urlencoded({ extended: true }));
+  app.use(morgan('dev'))
   // Serve static files
   app.use(express.static('game'));
   app.use('/editor',express.static('editor'));
