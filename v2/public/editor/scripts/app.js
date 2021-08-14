@@ -1,13 +1,16 @@
 const OBJECT_TYPES = {
     BIRD: 'bird',
+    CANNON: 'cannon',
+    BOX: 'box',
 };
 
 function onDragStart(event) {
     const dragInitialRect = event.target.getBoundingClientRect();
     const mouseInInitialDragX = event.clientX - dragInitialRect.x;
     const mouseInInitialDragY = event.clientY - dragInitialRect.y;
+    const type = event.target.getAttribute('data-level-object-default-type');
     event.dataTransfer.setData('application/json', JSON.stringify({
-        type: OBJECT_TYPES.BIRD,
+        type,
         initialDragOffset: {
             x: mouseInInitialDragX,
             y: mouseInInitialDragY,
@@ -17,7 +20,6 @@ function onDragStart(event) {
 
 function onDragOver(event) {
     event.preventDefault();
-    console.log(event);
     event.dataTransfer.dropEffect = 'move';
 }
 
@@ -32,27 +34,40 @@ function onDrop(event) {
         console.log(e);
         return;
     }
-    if (parsedData.type === OBJECT_TYPES.BIRD) {
-        const div = document.createElement('div');
-        div.classList.add('object-default-bird');
-        div.classList.add('level-object');
-        div.setAttribute('draggable', 'true');
-        const dropRect = event.target.getBoundingClientRect();
-        const mouseInDropX = event.clientX - dropRect.x - parsedData.initialDragOffset.x;
-        const mouseInDropY = event.clientY - dropRect.y - parsedData.initialDragOffset.y;
-        div.style.left = `${mouseInDropX}px`;
-        div.style.top = `${mouseInDropY}px`;
-        event.target.append(div);
+    // TODO: Show a warning when trying to add two cannons
+
+    const newLevelObject = document.createElement('div');
+    newLevelObject.classList.add('level-object');
+    newLevelObject.setAttribute('draggable', 'true');
+    const dropRect = event.target.getBoundingClientRect();
+    const mouseInDropX = event.clientX - dropRect.x - parsedData.initialDragOffset.x;
+    const mouseInDropY = event.clientY - dropRect.y - parsedData.initialDragOffset.y;
+    newLevelObject.style.left = `${mouseInDropX}px`;
+    newLevelObject.style.top = `${mouseInDropY}px`;
+    switch (parsedData.type) {
+        case OBJECT_TYPES.BIRD:
+            newLevelObject.classList.add('level-object-bird');
+            break;
+        case OBJECT_TYPES.CANNON:
+            newLevelObject.classList.add('level-object-cannon');
+            break;
+        case OBJECT_TYPES.BOX:
+            newLevelObject.classList.add('level-object-box');
+            break;
+        default:
+            throw new Error('Level object type does not exist');
     }
+    event.target.append(newLevelObject);
 }
 
 window.addEventListener('DOMContentLoaded', () => {
-    // Get the element by id
-    const birdInitialDrag = document.querySelector('#bird-default');
+    const objectDefaults = document.querySelectorAll('.object-default');
     const levelCanvas = document.querySelector('.level-canvas');
 
     // Add the ondragstart event listener
-    birdInitialDrag.addEventListener('dragstart', onDragStart);
+    objectDefaults.forEach((objectDefault) => {
+        objectDefault.addEventListener('dragstart', onDragStart);
+    });
 
     // Drop zone
     levelCanvas.addEventListener('drop', onDrop);

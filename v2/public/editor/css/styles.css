@@ -84,24 +84,24 @@ html {
     position: absolute;
 }
 
-/* Predefined styles for a cannon */
-.object-default-cannon {
-    width: 160px;
-    height: 124px;
-    background: url('../images/cannon.png') no-repeat;
-    background-size: 100%;
-}
-
 /* Predefined styles for birds */
-.object-default-bird {
+.level-object-bird {
     width: 100px;
     height: 100px;
     background-image: url("../images/bird-sprite.png");
     animation: move-bird .7s steps(4) infinite;
 }
 
+/* Predefined styles for a cannon */
+.level-object-cannon {
+    width: 160px;
+    height: 124px;
+    background: url('../images/cannon.png') no-repeat;
+    background-size: 100%;
+}
+
 /* Predefined styles for boxes */
-.object-default-box {
+.level-object-box {
     width: 120px;
     height: 120px;
     background-image: url("../images/crate-one.jpg");
