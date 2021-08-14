@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Angry Pigs - Level Editor</title>
+        <link href="./css/styles.css" rel="stylesheet" />
+    </head>
+    <body>
+        <div id="editor">
+            <div class="level-editor">
+                <div class="level-objects">
+                    <h3>Objects</h3>
+                    <!-- Fetch them from the server -->
+                    <div>
+                        <ul class="level-objects-list">
+                            <li>
+                                <h4>Cannon</h4>
+                                <div id="cannon-default" class="object-default-cannon" draggable="true"></div>
+                            </li>
+                            <li>
+                                <h4>Bird</h4>
+                                <div id="bird-default" class="object-default-bird" draggable="true"></div>
+                            </li>
+                            <li>
+                                <h4>Box</h4>
+                                <div id="box-default" class="object-default-box" draggable="true"></div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="level-canvas"></div>
+            </div>
+            </div>
+        </div>
+        <script src="./scripts/app.js"></script>
+    </body>
+</html>
