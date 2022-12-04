@@ -8,8 +8,8 @@
     "build": "rm -rf build && cd ../client && yarn build && mv -f build ../server && rm -rf build"
   },
   "dependencies": {
-    "body-parser": "^1.18.3",
-    "express": "^4.16.4",
+    "body-parser": "^1.19.2",
+    "express": "^4.17.3",
     "morgan": "^1.9.1",
     "uuid": "^3.3.2"
   }
